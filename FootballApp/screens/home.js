@@ -1,38 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View, Button,Alert } from 'react-native';
 
-function HomeScreen(){
-return (
-    <View style={styles.container}>
-    <Text>Ciaoss</Text>
-    <View style={styles.fixToText}>
-        <Button
-          title="Gioca Offline"
-          onPress={() => Alert.alert('Left button pressed')}
-        />
-        <Button
-          title="Gioca Online"
-          disabled
-          onPress={() => Alert.alert('Right button pressed')}
-        />
-      </View>
-    <StatusBar style="auto" />
-  </View>
-)
+
+
+function Home() {
+    return (
+        <View style={styles.container}>
+          <Text>Gioco dei giocatori</Text>
+          <StatusBar style="auto" />
+          <Button
+        title="Gioca offline"
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
+       <Button
+        title="Gioca contro un amico"
+        disabled
+        onPress={() => Alert.alert('Cannot press this one')}
+      />
+        </View>
+      );
 }
+
+export default Home;
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#242630',
       alignItems: 'center',
       justifyContent: 'center',
     },
-    fixToText: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-      },
-      
   });
-
-export default HomeScreen
+  
