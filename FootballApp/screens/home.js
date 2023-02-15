@@ -3,19 +3,22 @@ import {StyleSheet, Text, View, Button,Alert } from 'react-native';
 
 
 
-function Home() {
+function Home({navigation}) {
+  function pressHandler(){
+    navigation.navigate('OfflineGame');
+  }
     return (
         <View style={styles.container}>
           <Text>Gioco dei giocatori</Text>
           <StatusBar style="auto" />
           <Button
         title="Gioca offline"
-        onPress={() => Alert.alert('Simple Button pressed')}
+        onPress={pressHandler}
       />
        <Button
         title="Gioca contro un amico"
         disabled
-        onPress={() => Alert.alert('Cannot press this one')}
+        onPress={pressHandler}
       />
         </View>
       );
